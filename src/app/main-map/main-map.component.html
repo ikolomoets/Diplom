@@ -1,0 +1,11 @@
+<div class="map-page">
+    <agm-map class="main-map" [latitude]="latitude" [longitude]="longitude" [zoom]="zoom">
+        <agm-marker *ngFor="let marker of markers" [latitude]="marker.lat" [longitude]="marker.lng"
+            (markerClick)="selectMarker(marker)"></agm-marker>
+    </agm-map>
+
+    <div *ngIf="currentMarker" class="marker-info">
+        <h1>{{ currentMarker.adress }}</h1>
+        {{ currentMarker.desc }}
+    </div>
+</div>
